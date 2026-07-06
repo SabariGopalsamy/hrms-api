@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+
+metadata:
+  name: hrms-api-route
+  labels:
+    app: hrms-api
+
+spec:
+  to:
+    kind: Service
+    name: hrms-api-service
+    weight: 100
+
+  port:
+    targetPort: http
+
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+
+  wildcardPolicy: None

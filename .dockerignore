@@ -2,7 +2,7 @@
 .github/
 .vscode/
 .idea/
-.env
+
 *.log
 
 README.md
