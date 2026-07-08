@@ -1,0 +1,36 @@
+﻿apiVersion: v1
+data:
+  hr_dump.sql: "CREATE DATABASE IF NOT EXISTS hrms;\r\nUSE hrms;\r\n\r\n-- MySQL dump
+    10.13  Distrib 8.0.37, for Win64 (x86_64)\r\n--\r\n-- Host: localhost    Database:
+    hrms\r\n-- ------------------------------------------------------\r\n-- Server
+    version\t8.0.37\r\n\r\n/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT
+    */;\r\n/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;\r\n/*!40101
+    SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;\r\n/*!50503 SET NAMES
+    utf8mb4 */;\r\n/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\r\n/*!40103 SET TIME_ZONE='+00:00'
+    */;\r\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\r\n/*!40014
+    SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\r\n/*!40101
+    SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;\r\n/*!40111
+    SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;\r\n\r\n--\r\n-- Table structure
+    for table `employees`\r\n--\r\n\r\n\r\nDROP TABLE IF EXISTS `employees`;\r\n/*!40101
+    SET @saved_cs_client     = @@character_set_client */;\r\n/*!50503 SET character_set_client
+    = utf8mb4 */;\r\nCREATE TABLE employees (\r\n    employee_id INT PRIMARY KEY,\r\n
+    \   employee_number VARCHAR(20),\r\n    first_name VARCHAR(255),\r\n    last_name
+    VARCHAR(255),\r\n    email VARCHAR(255),\r\n    department VARCHAR(255),\r\n    designation
+    VARCHAR(255),\r\n    status VARCHAR(50)\r\n)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_0900_ai_ci;\r\n/*!40101 SET character_set_client = @saved_cs_client
+    */;\r\n\r\n--\r\n-- Dumping data for table `employees`\r\n--\r\n\r\nLOCK TABLES
+    `employees` WRITE;\r\n/*!40000 ALTER TABLE `employees` DISABLE KEYS */;\r\nINSERT
+    INTO employees (\r\n    employee_id,\r\n    employee_number,\r\n    first_name,\r\n
+    \   last_name,\r\n    email,\r\n    department,\r\n    designation,\r\n    status\r\n)\r\nVALUES\r\n(1,
+    'EMP001', 'John', 'Doe', 'john@test.com', 'IT', 'Developer', 'Active'),\r\n(2,
+    'EMP002', 'Mary', 'Smith', 'mary@test.com', 'Finance', 'Manager', 'Active'),\r\n(3,
+    'EMP003', 'Alex', 'Brown', 'alex@test.com', 'HR', 'HR Executive', 'Inactive'),\r\n(5,
+    'EMP004', 'David', 'Wilson', 'david@test.com', 'Cyber Security', 'Senior IAM Engineer',
+    'Inactive');\r\n/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;\r\n/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS
+    */;\r\n/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;\r\n/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT
+    */;\r\n/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;\r\n/*!40101
+    SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;\r\n/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES
+    */;\r\nUNLOCK TABLES;\r\n-- Dump completed on 2026-07-04 21:07:45\r\n"
+kind: ConfigMap
+metadata:
+  name: mysql-init-config
